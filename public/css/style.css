@@ -1,0 +1,12 @@
+/******* Change Box Model ***************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/************* Body ****************/
+
+body {
+  background-image: url("./public/images/site/checkerboard.jpg");
+}
