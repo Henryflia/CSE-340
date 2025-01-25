@@ -5,8 +5,322 @@
   box-sizing: border-box;
 }
 
-/************* Body ****************/
+body {
+  margin: 0;
+}
+
+#wrapper {
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1em;
+
+}
+/* Header */
+
+header {
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+.siteName a{
+  text-decoration: none;
+  font-size: 2em;
+  color: black;
+  
+  
+}
+
+#tools a{
+  text-decoration: none;
+  color: black;
+  position: relative; 
+  left:  80%;     
+  font-size: 10px;  
+  /* color: white;   */
+}
+
+/* NavigationLinks */
+.navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  background-color: #333;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  
+  
+}
+
+.navigation ul li {
+  width: 100%;  
+  top: 0;  
+  z-index: 1000;
+  text-align: center;
+  flex: 1;
+}
+
+.navigation ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  padding: 16px 0px;
+  display: block;
+}
+
+.navigation ul li a:hover {
+  background-color: #575757;
+}
+
+div .box{
+  position: absolute;  
+  top: 44%;            
+  left: 37%;           
+  transform: translate(-70%, -50%);       
+  background-color: rgba(229, 224, 224, 0.5);  
+  color: rgb(3, 181, 197);         
+  padding: 10px;
+}
+
+div .box h2{
+  margin: 0px;
+  
+}
+
+div .box h3{
+  margin: 0px;
+}
+
+.ownbuttom img{
+  width: 100%;;
+}
+.delorean {
+  width: 100%;
+  height: 50%;
+}
+
+ul.listreviews{
+  margin: 0;
+  padding: 10px;
+}
+.listreviews li{
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+.upgrades{
+  display: grid;
+  grid-template-rows: 1fr 2fr 2fr;
+  grid-template-columns: repeat(2, 50%);
+ 
+}
+
+.upgrades h2{
+  grid-row: 1;
+  grid-column: span 2;
+  padding: 0;
+}
+.flux{
+  grid-row: 2;
+  grid-column: 1;
+  margin: 10px;
+  text-align: center;
+ 
+}
+.flux img{
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+.flux div{
+  width: 100%;
+  height: 70%;
+  margin: 5px;
+  background-color: #01b0d3;
+  border: 1px solid black;
+}
+.flux p{
+  margin: 0;
+}
+
+.flame{
+  grid-row: 2;
+  grid-column: 2;
+  margin: 10px;
+  text-align: center;
+}
+.flame img{
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+.flame div{
+  width: 90%;
+  height: 70%;
+  margin: 5px;
+  background-color: #01b0d3;
+  border: 1px solid black;
+}
+.flame p{
+  margin: 0;
+}
+
+.bumper{
+  grid-row: 3;
+  grid-column: 1;
+  margin: 10px;
+  text-align: center;
+}
+.bumper img{
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+.bumper div{
+  width: 100%;
+  height: 70%;
+  margin: 5px;
+  background-color: #01b0d3;
+  border: 1px solid black;
+}
+.bumper p{
+  margin: 0;
+}
+
+.hub{
+  grid-row: 3;
+  grid-column: 2;
+  margin: 10px;
+  text-align: center;
+}
+.hub img{
+  width: 70px;
+  height: 70px;
+  margin: 10px;
+}
+.hub div{
+  width: 90%;
+  height: 70%;
+  margin: 5px;
+  background-color: #01b0d3;
+  border: 1px solid black;
+}
+.hub p{
+  margin: 0;
+}
+/* // Everything inside of this @media tag relates to the desktop view (e.g. anything 768px or more) */
+@media only screen and (min-width: 768px) {
+  body {
+    background-size: 100px 100px;
+    background-position: 0 0, 0 0, -50px -50px, 50px 50px;
+    background-image: url("/images/site/small_check.jpg");
+
+  }
+
+  #wrapper {
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 1vw;
+    width: 75vw;
+    max-width: 1200px;
+  }
+  .main{
+
+    display: grid;
+    grid-template-columns:repeat(2, 50%);
+    grid-template-rows: 40% 50%;
+    
+    }
+    
+    .welcome{
+      grid-row: 1;
+      grid-column: span 2;
+      /* height: 100%; */
+    }
+    .delorean{
+      height: 250px;
+      margin: 10px;
+      width: 80%;
+    }
+    div .box{
+      position: absolute;  
+      top: 44%;            
+      left: 27%;           
+      transform: translate(-70%, -50%);       
+      background-color: rgba(229, 224, 224, 0.5);  
+      color: rgb(3, 181, 197);         
+      padding: 10px;
+    }
+    .upsection{
+      grid-row: 2;
+      grid-column: 2;
+      margin-top: 50px;
+    }
+    .upgrades{
+      grid-row: 2;
+      grid-column: 1;
+      margin-top: 50px;
+    }
+    .listreviews{
+      font-size: 20px;
+    }
+  }
+
+/* Links */
+/* style.css */
+ 
+
+/* Now, using something like Chrome Developer Tools, you can toggle between desktop and mobile view(s) to see that the changes are taking affect. */
+
+/* 2. Next, tackle something simple like the border and checkered background on the desktop view (that disappears in the mobile view). I can simple make some adjustments to a few styles: */
+
+/******* Change Box Model ***************/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+/* ADDED FOR CONVENIENCE */
+:root {
+  --primary-background: #fff;
+  --main-accent: #01b0d3;
+}
 
 body {
-  background-image: url("./public/images/site/checkerboard.jpg");
+  margin: 0;
+}
+
+#wrapper {
+  width: 95%;
+  /* Added this to make sure that the background inside the wrapper is always white */
+  background-color: var(--primary-background);
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 1em;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+  /* You could use a regular image, but went with gradients */
+    background-image: linear-gradient(45deg, #000 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(45deg, transparent 75%, #000 75%),
+    linear-gradient(45deg, #000 25%, #fff 25%);
+    background-size: 100px 100px;
+    background-position: 0 0, 0 0, -50px -50px, 50px 50px;
+  }
+
+  #wrapper {
+  /* This is the blueish border around the desktop version */
+    border: 5px solid var(--main-accent);
+    border-radius: 10px;
+    margin-top: 1rem;
+    padding: 1vw;
+    width: 75vw;
+    max-width: 1200px;
+  }
+
 }
