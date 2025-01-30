@@ -1,11 +1,13 @@
-// const utilities = require("../utilities/")
+const ErrorController = {};
 
-// triggerError = (req, res, next) => {
-//     try {
-//         throw new Error("Intentional Server Error for Testing");
-//     } catch (error) {
-//         next(error); // Passes the error to middleware
-//     }
-// };
+ErrorController.intentionalError = async function(req, res, next) {
+    console.log("Causing an error...");
+    let aNumber = 1/0;
+    throw new Error("This is an intentional error.");
+    // The render templates expect data that is not being provided. This will also cause an exception.
+    res.render("./", {
+        title: "Intentional Error",
+    })
+}
 
-// module.exports = triggerError
+module.exports = ErrorController;

@@ -16,7 +16,7 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities/index');
 const accountRoute = require('./routes/accountRoute')
-// const errorRoutes = require("./routes/errorRoute");
+const errorRoutes = require("./routes/errorRoute");
 
 /* ***********************
  * Middleware
@@ -61,7 +61,7 @@ app.use("/inv", inventoryRoute)
 app.use("/account", accountRoute)
 
 // Error routes
-// app.use("/errors", errorRoutes);
+app.use("/errors", errorRoutes);
 
 app.use(async (req, res, next) => {
     next({status: 404, message: 'Sorry, we appear to have lost that page.'})

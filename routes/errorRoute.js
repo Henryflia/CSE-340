@@ -1,8 +1,13 @@
-// // Needed Resources 
-// const express = require("express")
-// const router = new express.Router() 
-// const utilities = require("../utilities");
-// const errorController = require("../controllers/errorController");
+// Needed Resources 
+const express = require("express")
+const router = new express.Router() 
+const utilities = require("../utilities");
+const errorController = require("../controllers/errorController");
 
-// router.get("/erros/error", errorController.triggerError);
-// module.exports = router;
+router.get("/", utilities.handleErrors(async (req, res, next) => {
+    next();
+}));
+
+router.get("/", utilities.handleErrors(errorController.IntetionalError));
+
+module.exports = router;

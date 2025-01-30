@@ -1,9 +1,15 @@
 <h1><%- title %></h1>
 <%- messages() %>
-
-<form class="input-box" id="loginForm" action="/account/login" method="post">
-    <label>Email<input type="email" name="account_email" required autocomplete="email" value="<%= locals.account_email %>"></label>
-    <label>Password<input type="password" name="account_password" id="password" required autocomplete="current-password" pattern="^(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{12,}$"><span class="reveal-button active" id="passwordHide">hide password</span></label>
+<% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %>
+<form class="login-form" action="/views/account/login.ejs" method="post">
+    <label>Email<input type="email" name="account_email" required autocomplete="email username" value="<%= locals.account_email %>"></label>
+    <label>Password<input type="password" name="account_password" id="password" required autocomplete="current-password"><button class="reveal-button active" id="passwordHide" type="button">hide password</button></label>
     <input type="submit" value="LOGIN">
 </form>
 
