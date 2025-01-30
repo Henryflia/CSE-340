@@ -77,10 +77,10 @@ Util.getHtml= async function (data) {
       <section class="car-listing">
         <img src="${data.inv_image}" alt="${data.inv_make} ${data.inv_model}">
         <div class="car-information">
-          <div>
+          <div class="cartitle">
             <h2>${data.inv_year} ${data.inv_make} ${data.inv_model}</h2>
           </div>
-          <div>
+          <div class="carprice">
             ${Number.parseFloat(data.inv_price).toLocaleString("en-US", {
               style: "currency",
               currency: "USD",

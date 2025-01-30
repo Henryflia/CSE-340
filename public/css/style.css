@@ -220,6 +220,104 @@ ul.listreviews{
 .hub p{
   margin: 0;
 }
+
+/* ******Vehicles section style******** */
+
+#inv-display{
+  padding: 20px;
+  /* justify-content: center; */
+}
+#inv-display li{
+  list-style: none;
+  border: 2px solid rgb(175, 175, 175);
+  border-radius: 5%;
+  width: 280px;
+  height: 320px; 
+  margin: 10px;
+  text-align: center;
+  color: black;
+}
+
+#inv-display li img{
+  object-fit: cover;
+  border-radius: 14px 14px 0px 0px;
+  width: 277px;
+  height: 180px;
+  max-height: 300px;
+}
+
+#inv-display li hr{
+  /* height: 20px; */
+  border: 3px solid black;
+  color: black;
+
+}
+
+/* **********Car list ***********/
+
+/* .car-listing{
+  display: block;
+} */
+.car-listing img{
+  max-width: 100%;
+  border: 4px solid rgb(67, 66, 66);
+  max-width: 500px;
+  min-width: 290px;
+  width: 100%;
+
+}
+
+.car-information{
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-template-rows: 0.5fr 3fr ;
+  background-color: #d0cdcd;
+  min-width: 290px;
+  max-width: 500px;
+
+}
+
+.car-information .carprice{
+  grid-column: 2;
+  grid-row: 2;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  /* border: 1px solid rgb(67, 66, 66);; */
+
+}
+
+.car-information .cartitle{
+  grid-column: span 2;
+  background-color: rgb(67, 66, 66);
+  color: #fff;
+}
+
+.car-information .cartitle h2{
+  margin-left: 10px;
+}
+
+.car-information .description{
+  grid-row: 2;
+  grid-column: 1;
+  /* border: 1px solid rgb(67, 66, 66); */
+}
+
+.car-information .description p{
+  margin: 0;
+}
+
+.car-information .description dl dt{
+  font-weight: bold;
+}
+
+.car-information .description dl dd{
+  margin: 0;
+  font-size: 20px;
+}
+
+
 /* // Everything inside of this @media tag relates to the desktop view (e.g. anything 768px or more) */
 @media only screen and (min-width: 768px) {
   body {
@@ -256,11 +354,6 @@ ul.listreviews{
       grid-column: 1 / 3;
     }
     div .box{
-      /* position: absolute;  
-      top: 44%;            
-      left: 27%;           
-      transform: translate(-70%, -50%);
-              */
       max-width: 240px;
       min-width: 30%; 
       grid-column: 1;
@@ -281,7 +374,37 @@ ul.listreviews{
     .listreviews{
       font-size: 20px;
     }
+    #inv-display{
+      display: grid;
+      grid-template-columns: repeat(3, 35%);
+    }
+    .car-listing{
+      display: grid;
+      grid-template-columns: repeat(2, 50%);
+    }
+
+    .car-information{
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .car-listing img{
+      width: 100%;
+      height: 100%;
+      max-width: 100%;
+      min-width: 100%;
+      border: 1px solid ;
+    }
+    .car-listing .description{
+      margin: 10px;
+    }
+  
+    .car-listing .carprice{
+      margin: 10px;
+    }
   }
+
+ 
+
 
 /* Links */
 /* style.css */
