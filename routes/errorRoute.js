@@ -8,6 +8,6 @@ router.get("/", utilities.handleErrors(async (req, res, next) => {
     next();
 }));
 
-router.get("/", utilities.handleErrors(errorController.IntetionalError));
+router.get("/", utilities.handleErrors(errorController.intentionalError));
 
 module.exports = router;
