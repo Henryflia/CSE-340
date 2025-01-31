@@ -5,7 +5,10 @@
     <div class="boxform">
         <form class="login-form" action="/account/login" method="post">
             <label>Email:<input type="email" name="account_email" required autocomplete="email username" value="<%= locals.account_email %>"></label>
-            <label>Password:<input type="password" name="account_password" id="password" required autocomplete="current-password"><button class="reveal-button active" id="passwordHide" type="button">hide password</button></label>
+            <label>Password:<input type="password" name="account_password" id="password" required autocomplete="current-password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"><button class="reveal-button active" id="passwordHide" type="button">hide password</button></label>
+            <small>
+                Must be at least 12 characters, contain a capital letter, a number, and a special character.
+            </small>
             <input type="submit" value="LOGIN">
         </form>
         <div>

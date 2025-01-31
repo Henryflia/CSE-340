@@ -89,30 +89,20 @@ app.use(async (err, req, res, next) => {
   })
 
 /* ***********************
-* Local Server Information
-* Values from .env (environment) file
-*************************/
-const port = process.env.PORT || 3000
-const host = process.env.HOST
-
+ * Local Server Information
+ * Values from .env (environment) file
+ *************************/
+const port = process.env.PORT || 3000;
+const host = process.env.HOST || 'localhost';
+ 
 /* ***********************
-* Log statement to confirm server operation
-*************************/
-app.listen(port, () => {
-console.log(`app listening on ${host}:${port}`)
-})
-
-
+ * Log statement to confirm server operation
+ *************************/
 app.listen(port, host, (err) => {
-
   if (err) {
-
-    console.error(`Error occurred: ${err.message}`);
-
-  } else {
-
-    console.log(`Server running at http://${host}:${port}/`);
-
+    console.error('Error occured: ${err.message}');
   }
-
-}); 
+  else{
+    console.log(`Server running at http://${host}:${port}/`);
+  }
+});
