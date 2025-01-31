@@ -16,7 +16,9 @@ const baseController = require("./controllers/baseController")
 const inventoryRoute = require("./routes/inventoryRoute")
 const utilities = require('./utilities/index');
 const accountRoute = require('./routes/accountRoute')
-const errorRoutes = require("./routes/errorRoute");
+// const intentionalErrorRoute = require("./routes/intentionalErrorRoute.js");
+const bodyParser = require("body-parser")
+
 
 /* ***********************
  * Middleware
@@ -32,12 +34,17 @@ app.use(session({
   name: 'sessionId',
 }))
 
+
+
 // Express Messages Middleware
 app.use(require('connect-flash')())
 app.use(function(req, res, next){
   res.locals.messages = require('express-messages')(req, res)
   next()
 })
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 /* ***********************
 * View Engine and Templates
@@ -58,10 +65,10 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 
 // Account routes
-app.use("/account", accountRoute)
+app.use("/account", require("./routes/accountRoute"))
 
 // Error routes
-app.use("/errors", errorRoutes);
+// app.use("/ierror", intentionalErrorRoute);
 
 app.use(async (req, res, next) => {
     next({status: 404, message: 'Sorry, we appear to have lost that page.'})

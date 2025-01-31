@@ -231,7 +231,7 @@ ul.listreviews{
   list-style: none;
   border: 2px solid rgb(175, 175, 175);
   border-radius: 5%;
-  width: 280px;
+  width: 270px;
   height: 320px; 
   margin: 10px;
   text-align: center;
@@ -241,7 +241,7 @@ ul.listreviews{
 #inv-display li img{
   object-fit: cover;
   border-radius: 14px 14px 0px 0px;
-  width: 277px;
+  width: 267px;
   height: 180px;
   max-height: 300px;
 }
@@ -315,6 +315,32 @@ ul.listreviews{
 .car-information .description dl dd{
   margin: 0;
   font-size: 20px;
+}
+/* *****Login View****** */
+
+div.form{
+  border: 3px solid black;
+  background-color: black;
+  
+}
+
+.boxform{
+  background-color: rgb(32, 39, 110);
+  border-radius: 5px;
+}
+.login-form{
+  color: #fff;
+  margin: 0px;
+  padding: 0;
+}
+div.form div{
+  margin: 0px;
+  padding: 0;
+  
+  
+}
+label, input{
+  display: block;
 }
 
 
