@@ -11,8 +11,8 @@
 <div class="form">
     <div class="boxform">
         <form class="login-form" action="/account/register" method="post">
-            <label>First Name:<input type="text" name="account_first" required autocomplete="given-name" value="<%= locals.account_name %>"></label>
-            <label>Last Name:<input type="text" name="account_lastname  " required autocomplete="family-name" value="<%= locals.account_name %>"></label>
+            <label>First Name:<input type="text" name="account_firstname" required autocomplete="given-name" value="<%= locals.account_firstname %>"></label>
+            <label>Last Name:<input type="text" name="account_lastname" required autocomplete="family-name" value="<%= locals.account_lastname %>"></label>
             <label>Email Address:<input type="email" name="account_email" required autocomplete="email username" value="<%= locals.account_email %>"></label>
             <label>Password:<input type="password" name="account_password" id="password" required autocomplete="new-password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
               title="Password must be at least 12 characters long, contain an uppercase letter, a number, and a special character.">

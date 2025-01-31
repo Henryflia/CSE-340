@@ -1,5 +1,12 @@
 <h1><%- title %></h1>
 <%- messages() %>
+<!-- <% if (errors) { %>
+    <ul class="notice">
+   <% errors.array().forEach(error => { %>
+     <li><%= error.msg %></li>
+  <%  }) %>
+   </ul>
+  <% } %> -->
 
 <div class="form">
     <div class="boxform">
@@ -16,3 +23,20 @@
         </div>
     </div>
 </div>
+
+
+<script>
+    const pswBtn = document.querySelector("#passwordHide");
+    pswBtn.addEventListener("click", function() {
+      const pswdInput = document.getElementById("password");
+      const type = pswdInput.getAttribute("type");
+      if (type == "password") {
+        pswdInput.setAttribute("type", "text");
+        pswBtn.innerHTML = "Hide Password"
+      }
+      else{
+        pswdInput.setAttribute("type", "password");
+        pswBtn.innerHTML = "Show Password"
+      }
+    })
+  </script>
