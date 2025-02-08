@@ -35,9 +35,9 @@ header {
 #tools a{
   text-decoration: none;
   color: black;
-  position: relative; 
-  left:  80%;     
-  font-size: 10px;  
+  position: absolute; 
+  left:  70%;     
+  font-size: 20px; 
   /* color: white;   */
 }
 
@@ -320,28 +320,48 @@ ul.listreviews{
 
 div.form{
   border: 3px solid black;
-  background-color: black;
-  
+  background-color: rgb(112, 205, 230);
+  height: 100%;
+  border-radius: 10px;
 }
 
 .boxform{
-  background-color: rgb(32, 39, 110);
+  background-color: rgb(112, 205, 230);
   border-radius: 5px;
+  border: 1px solid gray;
+  margin-top: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 30px;
 }
+
+.boxform div span{
+  margin: 10px;
+}
+
 .login-form{
-  color: #fff;
+  color: black;
   margin: 0px;
-  padding: 0;
+  /* padding: 10px; */
+  margin: 10px;
+  /* margin-top: 50px; */
+
 }
-div.form div{
+.login-form label{
+  margin-top: 10px;
+
+}
+/* div.form div{
   margin: 0px;
   padding: 0;
   
   
-}
+} */
 label, input{
   display: block;
+  /* width: 30em; */
 }
+
 
 
 /* // Everything inside of this @media tag relates to the desktop view (e.g. anything 768px or more) */
@@ -427,7 +447,19 @@ label, input{
     .car-listing .carprice{
       margin: 10px;
     }
+    div.form{
+      /* max-width: 600px; */
+      padding: 10px;
+      /* margin-left: 300px; */
+        grid-column: 2;
+    }
+    .grid-from{
+      display: grid;
+      grid-template-columns: 10% 80% 10%;
+      /* position: inherit; */
+    }
   }
+  /* ******Login***** */
 
  
 
