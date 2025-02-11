@@ -29,15 +29,6 @@ async function buildLogin(req, res, next) {
     })
   }
 
-  async function accountView(req, res, next) {
-    let nav = await utilities.getNav()
-    // req.flash("notice", "This is a flash message.!!!@2")
-    res.render("account/accountManagement", {
-      title: "Account Management",
-      nav,
-      errors: null
-    })
-  }
 
   /* ****************************************
 *  Process Registration
@@ -127,4 +118,4 @@ async function accountLogin(req, res) {
   }
 }
   
-module.exports = { buildLogin, buildRegister, registerAccount, accountLogin, accountView}
+module.exports = { buildLogin, buildRegister, registerAccount, accountLogin}

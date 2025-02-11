@@ -28,6 +28,4 @@ router.post(
     utilities.handleErrors(accountController.accountLogin)
   )
 
-
-
 module.exports = router;
