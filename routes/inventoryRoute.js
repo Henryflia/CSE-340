@@ -18,4 +18,9 @@ router.get("/addInventory", utilities.handleErrors(invController.buildAddInvento
 router.post("/addInventory", invValidate.inventoryRules(), invValidate.checkInventoryData, utilities.handleErrors(invController.addInventory));
 // router.get("/detail/:inventoryId", utilities.handleErrors(invController.buildByVehicleId+5) )
 
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+// Update route
+router.get("/edit/:inventory_id", utilities.handleErrors(invController.buildEditInventory))
+router.post("/update/", invValidate.inventoryRules(), invValidate.checkUpdateData, utilities.handleErrors(invController.updateInventory))
+
 module.exports = router;
