@@ -35,10 +35,15 @@ header {
 #tools a{
   text-decoration: none;
   color: black;
-  position: absolute; 
+  text-align: right;
   left:  70%;     
   font-size: 20px; 
+  margin: 10px;
   /* color: white;   */
+}
+#tools{
+  text-align: right;
+
 }
 
 /* NavigationLinks */
@@ -50,8 +55,6 @@ header {
   display: flex;
   /* justify-content: center; */
   align-items: center;
-  
-  
 }
 
 .navigation ul li {

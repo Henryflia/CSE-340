@@ -23,4 +23,7 @@ router.get("/getInventory/:classification_id", utilities.handleErrors(invControl
 router.get("/edit/:inventory_id", utilities.handleErrors(invController.buildEditInventory))
 router.post("/update/", invValidate.inventoryRules(), invValidate.checkUpdateData, utilities.handleErrors(invController.updateInventory))
 
+router.get("/delete/:inventory_id", utilities.handleErrors(invController.buildDeleteInventory));
+router.post("/delete/", utilities.handleErrors(invController.deleteInventory));
+
 module.exports = router;

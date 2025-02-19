@@ -1,0 +1,48 @@
+<h1><%- title %></h1>
+<%- messages() %>
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<div class="grid-from">
+  <div class="form">
+      <div class="boxform">
+          <form class="login-form" action="/account/update" method="post" >
+              <label>First Name:<input type="text" name="account_firstname" required autocomplete="given-name"  width="30em" value="<%= locals.account_firstname %>"></label>
+              <label>Last Name:<input type="text" name="account_lastname" required autocomplete="family-name" value="<%= locals.account_lastname %>"></label>
+              <label>Email Address:<input type="email" name="account_email" required autocomplete="email username" value="<%= locals.account_email %>"></label>
+
+              <input type="submit" value="UPDATE">
+              <input type="hidden" name="account_id" value="<%= locals.account_id %>">
+              <input type="hidden" name="old_email" value="<%= locals.account_email %>"> <%# To exclude from existing email search %>
+          </form>
+          <form class="login-form" action="/account/update-password" method="post" >
+            <label>Password:<input type="password" name="account_password" id="password" required autocomplete="new-password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
+                title="Password must be at least 12 characters long, contain an uppercase letter, a number, and a special character.">
+                <button class="reveal-button active" id="passwordHide" type="button">Show Password</button></label>
+                <input type="submit" value="CHANGE PASSWORD">
+                <input type="hidden" name="account_id" value="<%= locals.account_id %>">
+        </form>
+      </div>
+  </div>
+</div>
+
+<script>
+  const pswBtn = document.querySelector("#passwordHide");
+  pswBtn.addEventListener("click", function() {
+    const pswdInput = document.getElementById("password");
+    const type = pswdInput.getAttribute("type");
+    if (type == "password") {
+      pswdInput.setAttribute("type", "text");
+      pswBtn.innerHTML = "Hide Password"
+    }
+    else{
+      pswdInput.setAttribute("type", "password");
+      pswBtn.innerHTML = "Show Password"
+    }
+  })
+</script>

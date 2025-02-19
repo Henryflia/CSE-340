@@ -230,8 +230,8 @@ invCont.updateInventory = async function (req, res, next) {
     );
     const itemName = `${inv_make} ${inv_model}`;
     req.flash("notice", "Sorry, the update failed.");
-    res.status(501).render("inventory/editInventory", {
-      title: "Edit " + itemName,
+    res.status(501).render("inventory/deleteInventory", {
+      title: "Edit" + itemName,
       nav,
       errors: null,
       classifications,
@@ -246,6 +246,60 @@ invCont.updateInventory = async function (req, res, next) {
       inv_miles,
       inv_color,
       classification_id,
+    });
+  }
+};
+
+// Delete View
+invCont.buildDeleteInventory = async function (req, res, next) {
+  const inventory_id = parseInt(req.params.inventory_id);
+  console.log(inventory_id)
+  const nav = await utilities.getNav();
+
+  const inventoryData = (
+    await invModel.getVehicleId(inventory_id))[0]; // Change this function to return the first item
+  const name = `${inventoryData.inv_make} ${inventoryData.inv_model}`;
+
+  res.render("inventory/delete-confirm", {
+    title: "Delete" + name,
+    errors: null,
+    nav,
+    inv_id: inventoryData.inv_id,
+    inv_make: inventoryData.inv_make,
+    inv_model: inventoryData.inv_model,
+    inv_year: inventoryData.inv_year,
+    inv_price: inventoryData.inv_price,
+  });
+};
+
+invCont.deleteInventory = async function (req, res, next) {
+  const nav = await utilities.getNav();
+
+  const {
+    inv_id,
+    inv_make,
+    inv_model,
+    inv_year,
+    inv_price,
+  } = req.body;
+
+  const response = await invModel.deleteInventory(inv_id)
+  const itemName = `${inv_make} ${inv_model}`;
+
+  if (response) {
+    req.flash("notice", `The ${itemName} was successfully deleted.`);
+    res.redirect("/inv/");
+  } else {
+    req.flash("notice", "Sorry, the delete failed.");
+    res.status(501).render("inventory/delete-confirm", {
+      title: "Delete " + itemName,
+      nav,
+      errors: null,
+      inv_id,
+      inv_make,
+      inv_model,
+      inv_year,
+      inv_price,
     });
   }
 };
