@@ -145,6 +145,7 @@ async function buildInbox(req, res, next) {
     const message_read = await messageModel.toggleArchived(req.params.messageId); // Returns the new value of message_read
     return res.json(message_read);
   }
+
   
   module.exports = {
     buildInbox,

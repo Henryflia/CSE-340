@@ -5,7 +5,7 @@ require("dotenv").config()
 const utilities = require("../utilities/")
 const accountModel = require("../models/account-model")
 const { updateRules } = require("../utilities/account-validation")
-
+const messageModel = require("../models/message-model");
 
 
 /* ****************************************
@@ -230,10 +230,12 @@ async function updatePassword(req, res) {
 
 async function buildAccountManagement(req, res) {
   let nav = await utilities.getNav();
+  const unread = await messageModel.getMessageCountById(res.locals.accountData.account_id);
   res.render("account/account-management", {
     title: "Account Management",
     nav,
     errors: null,
+    unread,
   });
   return; 
 }

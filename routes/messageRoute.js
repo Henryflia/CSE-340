@@ -29,5 +29,6 @@ router.post("/delete", utilities.handleErrors(messageController.deleteMessage));
 //API calls
 router.get("/view/:messageId/toggle-read", utilities.handleErrors(messageController.toggleRead));
 router.get("/view/:messageId/toggle-archived", utilities.handleErrors(messageController.toggleArchived));
-
+router.post("/message/view/:messageId/toggle-read", utilities.handleErrors(messageController.toggleRead));
+router.post("/message/view/:messageId/toggle-archived", utilities.handleErrors(messageController.toggleArchived));
 module.exports = router;

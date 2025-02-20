@@ -365,7 +365,39 @@ label, input{
   /* width: 30em; */
 }
 
+#messages .notice li{
+   position: absolute;
+}
+table{
+  background-color: rgb(207, 204, 204);
+}
+th, td {
+  border: 1px solid black; /* Borde negro de 1px */
+  padding: 8px;
+  text-align: left;
+}
+.message-view{
+  /* margin: 10px; */
+}
+.message-view dl{
+  background-color: rgb(207, 204, 204);
+  
+}
 
+.message-view dl dt{
+  background-color: rgb(207, 204, 204);
+  margin: 10px;
+}
+
+.message-view .message-pane{
+  background-color: rgb(207, 204, 204);
+}
+
+.message-view .message-pane {
+  background-color: rgb(207, 204, 204);
+  border: 1px solid black;
+  
+}
 
 /* // Everything inside of this @media tag relates to the desktop view (e.g. anything 768px or more) */
 @media only screen and (min-width: 768px) {
@@ -373,7 +405,6 @@ label, input{
     background-size: 100px 100px;
     background-position: 0 0, 0 0, -50px -50px, 50px 50px;
     background-image: url("/images/site/small_check.jpg");
-
   }
 
   #wrapper {
@@ -396,6 +427,11 @@ label, input{
       grid-column: span 2;
       /* height: 100%; */
     }
+    #messages{
+      grid-row: 1;
+      grid-column: span 2;
+      position: absolute;
+   }
     .delorean{
       height: 250px;
       margin: 10px;
@@ -461,6 +497,7 @@ label, input{
       grid-template-columns: 10% 80% 10%;
       /* position: inherit; */
     }
+
   }
   /* ******Login***** */
 
