@@ -19,6 +19,7 @@ const accountRoute = require('./routes/accountRoute')
 const intentionalErrorRoute = require("./routes/intentionalErrorRoute.js");
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
+const messageRoute = require('./routes/messageRoute')
 
 
 
@@ -77,6 +78,9 @@ app.use("/inv", inventoryRoute)
 
 // Account routes
 app.use("/account", require("./routes/accountRoute"))
+
+// Message routes
+app.use("/message", messageRoute)
 
 // Error routes
 app.use("/ierror", intentionalErrorRoute);
